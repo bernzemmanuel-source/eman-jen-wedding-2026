@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eman & Jen Wedding Invitation</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+sage: {
+50: '#f4f7f4',
+100: '#e3ece3',
+200: '#c7dac7',
+300: '#a3bfa3',
+400: '#7a9e7a',
+500: '#5c805c',
+600: '#486648',
+700: '#3a523a',
+800: '#314231',
+900: '#2a362a',
+},
+champagne: {
+50: '#fbf9f5',
+100: '#f5efe4',
+200: '#ebdcc5',
+300: '#dfc79e',
+400: '#d1af7b',
+500: '#c29a5e',
+},
+cream: '#FDFBF7',
+tan: '#D4BC98',
+nude: '#E6D7C3'
+},
+fontFamily: {
+serif: ['"Cormorant Garamond"', 'serif'],
+sans: ['Montserrat', 'sans-serif'],
+script: ['"Great Vibes"', 'cursive']
+}
+}
+}
+}
+</script>
+<style>
+.glass-card {
+background: rgba(253, 251, 247, 0.88);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border: 1px solid rgba(163, 191, 163, 0.25);
+}
+.bg-leaves-pattern {
+background-color: #2c3a2f;
+background-image: radial-gradient(#486648 1px, transparent 1px), radial-gradient(#3a523a 1px, #2c3a2f 1px);
+background-size: 40px 40px;
+background-position: 0 0, 20px 20px;
+}
+.faq-item summary { list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item[open] .faq-chevron { transform: rotate(180deg); }
+</style>
+</head>
+<body class="bg-sage-900 text-sage-800 font-sans antialiased selection:bg-sage-300 selection:text-sage-900 overflow-x-hidden">
+
+<!-- Background Audio (Romantic Instrumental) -->
+<audio id="bg-music" loop preload="auto" playsinline>
+<source src="assets/background-music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Welcome Overlay (a tap here starts the music, which browsers require) -->
+<div id="welcome-overlay" class="fixed inset-0 z-[60] flex flex-col items-center justify-center text-center px-6 bg-gradient-to-b from-sage-950 via-sage-900 to-sage-950 transition-opacity duration-700">
+<p class="text-champagne-300 font-serif tracking-[0.3em] uppercase text-xs md:text-sm mb-3">You Are Invited</p>
+<h2 class="font-script text-6xl md:text-7xl text-champagne-200 drop-shadow-md mb-2">Eman & Jen</h2>
+<p class="text-sage-200 font-light tracking-wide text-sm mb-8">12.21.2026</p>
+<button id="open-invitation" type="button" class="bg-champagne-300 hover:bg-champagne-400 text-sage-900 font-medium text-xs uppercase tracking-[0.25em] py-4 px-8 rounded-full shadow-2xl border-2 border-white/60 transition-all duration-300 hover:scale-105 flex items-center gap-2">
+<i data-lucide="mail-open" class="w-4 h-4"></i> Open Invitation
+</button>
+<p class="text-sage-300 text-[11px] tracking-wide mt-4 flex items-center gap-1.5"><i data-lucide="music" class="w-3.5 h-3.5"></i> Best enjoyed with sound on</p>
+</div>
+
+<!-- Floating Audio Control Button -->
+<button id="music-toggle" onclick="toggleMusic()" class="fixed bottom-6 right-6 z-50 bg-champagne-300 hover:bg-champagne-400 text-sage-900 p-3.5 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 border-2 border-white/60" aria-label="Toggle Music">
+<i data-lucide="music" class="w-5 h-5 animate-pulse"></i>
+</button>
+
+<!-- ================= COVER SECTION ================= -->
+<section class="relative min-h-screen flex flex-col items-center justify-between text-center px-4 py-12 bg-leaves-pattern overflow-hidden">
+<!-- Background Image with Blend & Sage Leaves Overlay -->
+<div class="absolute inset-0 z-0">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80" alt="Eman & Jen Cover" class="w-full h-full object-cover opacity-35 mix-blend-overlay scale-105 animate-pulse duration-[10000ms]">
+<div class="absolute inset-0 bg-gradient-to-b from-sage-950/80 via-sage-900/50 to-sage-950/90"></div>
+</div>
+
+<div class="relative z-10 max-w-lg mx-auto pt-8" data-aos="fade-down" data-aos-duration="1200">
+<p class="text-champagne-300 font-serif tracking-[0.3em] uppercase text-sm md:text-base mb-3 font-medium">The Beginning of Forever</p>
+<h1 class="font-script text-6xl md:text-8xl text-champagne-200 drop-shadow-md my-2">Eman & Jen</h1>
+<p class="text-sage-200 font-light tracking-wide text-sm md:text-base mt-2">are getting married</p>
+<div class="w-24 h-[1px] bg-champagne-300/60 mx-auto my-5"></div>
+</div>
+
+<div class="relative z-10 glass-card rounded-3xl p-6 md:p-8 w-full max-w-md mx-auto shadow-2xl my-6 border border-champagne-200/30" data-aos="zoom-in" data-aos-duration="1000">
+<p class="font-serif text-2xl md:text-3xl text-sage-900 font-semibold mb-1">12.21.2026</p>
+<p class="text-sm font-medium tracking-widest text-sage-700 uppercase mb-4">3:00 PM</p>
+<p class="text-xs md:text-sm text-sage-800 tracking-wide font-medium px-2">OUR LADY OF THE SACRED HEART PARISH</p>
+<p class="text-xs text-sage-600 mt-1">N. Escario Street, Kamputhaw, Cebu City</p>
+
+<!-- Live Countdown Timer -->
+<div class="grid grid-cols-4 gap-2 mt-6 pt-6 border-t border-sage-200/60 text-center">
+<div class="bg-white/70 rounded-xl p-2.5 shadow-sm">
+<span id="days" class="block font-serif text-2xl md:text-3xl font-bold text-sage-900">00</span>
+<span class="text-[10px] uppercase tracking-wider text-sage-600 font-semibold">Days</span>
+</div>
+<div class="bg-white/70 rounded-xl p-2.5 shadow-sm">
+<span id="hours" class="block font-serif text-2xl md:text-3xl font-bold text-sage-900">00</span>
+<span class="text-[10px] uppercase tracking-wider text-sage-600 font-semibold">Hours</span>
+</div>
+<div class="bg-white/70 rounded-xl p-2.5 shadow-sm">
+<span id="minutes" class="block font-serif text-2xl md:text-3xl font-bold text-sage-900">00</span>
+<span class="text-[10px] uppercase tracking-wider text-sage-600 font-semibold">Mins</span>
+</div>
+<div class="bg-white/70 rounded-xl p-2.5 shadow-sm">
+<span id="seconds" class="block font-serif text-2xl md:text-3xl font-bold text-sage-900">00</span>
+<span class="text-[10px] uppercase tracking-wider text-sage-600 font-semibold">Secs</span>
+</div>
+</div>
+</div>
+
+<div class="relative z-10 pb-4 animate-bounce">
+<a href="#our-story" class="text-champagne-300 flex flex-col items-center gap-1 text-xs uppercase tracking-widest font-medium">
+<span>Scroll to explore</span>
+<i data-lucide="chevron-down" class="w-4 h-4"></i>
+</a>
+</div>
+</section>
+
+
+<!-- ================= OUR STORY ================= -->
+<section id="our-story" class="py-20 px-4 bg-sage-50 relative overflow-hidden">
+<div class="max-w-2xl mx-auto glass-card rounded-3xl p-8 md:p-12 shadow-xl text-center border-l-4 border-r-4 border-sage-400" data-aos="fade-up" data-aos-duration="1000">
+<span class="text-xs uppercase tracking-[0.3em] text-sage-600 font-semibold block mb-2">How It Began</span>
+<h2 class="font-serif text-4xl md:text-5xl text-sage-900 mb-6 font-normal italic">Our Story</h2>
+<div class="w-16 h-[1px] bg-sage-300 mx-auto mb-6"></div>
+<p class="font-serif text-lg md:text-xl text-sage-800 leading-relaxed italic mb-8">
+"Our story began nearly two decades ago, when two hearts first crossed paths at the same school. What started as a young love blossomed into five beautiful years together before life led us down separate paths. But some love stories are written to find their way back. A decade later, destiny brought us together once more, reminding us that God’s timing is always perfect.<br><br>Now, by His grace, we are ready to begin our forever, walking hand in hand down the aisle and into a lifetime of love, faith, and commitment in the presence of our Creator."
+</p>
+<p class="font-script text-3xl text-sage-700">Eman & Jen</p>
+</div>
+</section>
+
+
+<!-- ================= EVENT DETAILS ================= -->
+<section class="py-20 px-4 bg-cream relative">
+<div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+<div class="text-center mb-12">
+<span class="text-xs uppercase tracking-[0.3em] text-sage-600 font-semibold block mb-2">Ceremony & Reception</span>
+<h2 class="font-serif text-4xl md:text-5xl text-sage-900">Event Details</h2>
+<div class="w-16 h-[1px] bg-sage-400 mx-auto mt-4"></div>
+</div>
+
+<div class="grid md:grid-cols-2 gap-8 mb-12">
+<!-- Ceremony Card -->
+<div class="glass-card rounded-3xl p-8 shadow-lg text-center flex flex-col justify-between border-t-4 border-sage-500" data-aos="fade-right" data-aos-duration="1000">
+<div>
+<span class="inline-block p-3 rounded-full bg-sage-100 text-sage-700 mb-4">
+<i data-lucide="church" class="w-6 h-6"></i>
+</span>
+<h3 class="font-serif text-2xl font-bold text-sage-900 mb-1">Ceremony</h3>
+<p class="font-serif text-lg text-sage-700 italic mb-3">Our Lady of the Sacred Heart Parish</p>
+<p class="text-xs text-sage-600 mb-6">N. Escario Street, Kamputhaw, Cebu City, Philippines</p>
+</div>
+<a href="https://maps.google.com/?q=Our+Lady+of+the+Sacred+Heart+Parish+Cebu+City" target="_blank" class="inline-flex items-center justify-center gap-2 bg-sage-800 hover:bg-sage-900 text-white py-2.5 px-6 rounded-full text-xs font-semibold tracking-wider uppercase transition-all shadow-md">
+<span>Get Directions</span>
+<i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+</a>
+</div>
+
+<!-- Reception Card -->
+<div class="glass-card rounded-3xl p-8 shadow-lg text-center flex flex-col justify-between border-t-4 border-champagne-400" data-aos="fade-left" data-aos-duration="1000">
+<div>
+<span class="inline-block p-3 rounded-full bg-champagne-100 text-champagne-600 mb-4">
+<i data-lucide="glass-water" class="w-6 h-6"></i>
+</span>
+<h3 class="font-serif text-2xl font-bold text-sage-900 mb-1">Reception</h3>
+<p class="font-serif text-lg text-sage-700 italic mb-3">Mezzo Hotel</p>
+<p class="text-xs text-sage-600 mb-6">F. Cabahug cor Pres. Quezon Street, Cebu City, Philippines</p>
+</div>
+<a href="https://maps.google.com/?q=Mezzo+Hotel+Cebu+City" target="_blank" class="inline-flex items-center justify-center gap-2 bg-sage-800 hover:bg-sage-900 text-white py-2.5 px-6 rounded-full text-xs font-semibold tracking-wider uppercase transition-all shadow-md">
+<span>Get Directions</span>
+<i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+</a>
+</div>
+</div>
+
+<!-- Order of the Day -->
+<div class="glass-card rounded-3xl p-8 shadow-md max-w-2xl mx-auto text-center" data-aos="zoom-in" data-aos-duration="1000">
+<h3 class="font-serif text-2xl text-sage-900 mb-6">Order of the Day</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-sage-200/60 pb-3">
+<div class="text-left">
+<p class="font-semibold text-sage-900">Ceremony</p>
+<p class="text-xs text-sage-600">Our Lady of the Sacred Heart Parish</p>
+</div>
+<span class="font-serif text-lg font-bold text-sage-800">3:00 PM</span>
+</div>
+<div class="flex justify-between items-center border-b border-sage-200/60 pb-3 pt-1">
+<div class="text-left">
+<p class="font-semibold text-sage-900">Cocktail Hour &amp; Photos</p>
+<p class="text-xs text-sage-600">Mezzo Hotel</p>
+</div>
+<span class="font-serif text-lg font-bold text-sage-800">5:00 PM</span>
+</div>
+<div class="flex justify-between items-center pt-1">
+<div class="text-left">
+<p class="font-semibold text-sage-900">Reception</p>
+<p class="text-xs text-sage-600">Mezzo Hotel</p>
+</div>
+<span class="font-serif text-lg font-bold text-sage-800">6:00 PM</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- ================= DRESS CODE ================= -->
+<section class="py-20 px-4 bg-sage-50 relative">
+<div class="max-w-3xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+<span class="text-xs uppercase tracking-[0.3em] text-sage-600 font-semibold block mb-2">What To Wear</span>
+<h2 class="font-serif text-4xl md:text-5xl text-sage-900 mb-6">Dress Code & Motif</h2>
+<div class="w-16 h-[1px] bg-sage-300 mx-auto mb-8"></div>
+
+<div class="glass-card rounded-3xl p-8 shadow-xl mb-8">
+<p class="font-serif text-2xl text-sage-900 font-semibold mb-2">Formal Attire</p>
+<p class="text-sm text-sage-700 max-w-lg mx-auto mb-6">Suit or long-sleeve & slacks; a cocktail dress or dressy separates.</p>
+
+<!-- Color Palette Display -->
+<div class="flex flex-wrap justify-center items-center gap-3 mb-8">
+<div class="flex flex-col items-center"><span class="w-9 h-9 rounded-full bg-[#F5EBE0] shadow-md border border-white"></span><span class="text-[10px] mt-1 text-sage-700 font-medium">Cream</span></div>
+<div class="flex flex-col items-center"><span class="w-9 h-9 rounded-full bg-[#D5BC9C] shadow-md border border-white"></span><span class="text-[10px] mt-1 text-sage-700 font-medium">Beige</span></div>
+<div class="flex flex-col items-center"><span class="w-9 h-9 rounded-full bg-[#E3C5B5] shadow-md border border-white"></span><span class="text-[10px] mt-1 text-sage-700 font-medium">Tan</span></div>
+<div class="flex flex-col items-center"><span class="w-9 h-9 rounded-full bg-[#D6CCC2] shadow-md border border-white"></span><span class="text-[10px] mt-1 text-sage-700 font-medium">Nude</span></div>
+<div class="flex flex-col items-center"><span class="w-9 h-9 rounded-full bg-[#8A9A86] shadow-md border border-white"></span><span class="text-[10px] mt-1 text-sage-700 font-medium">Sage</span></div>
+<div class="flex flex-col items-center"><span class="w-9 h-9 rounded-full bg-[#A8BBA2] shadow-md border border-white"></span><span class="text-[10px] mt-1 text-sage-700 font-medium">Light Sage</span></div>
+<div class="flex flex-col items-center"><span class="w-9 h-9 rounded-full bg-[#688270] shadow-md border border-white"></span><span class="text-[10px] mt-1 text-sage-700 font-medium">Dusty Jade</span></div>
+</div>
+
+<!-- Attached Dress Code Visual/Card guidance -->
+<div class="bg-white/80 rounded-2xl p-6 border border-sage-200 text-left">
+<h4 class="font-serif text-lg font-bold text-sage-900 mb-2 flex items-center gap-2">
+<i data-lucide="info" class="w-4 h-4 text-sage-600"></i> Attire Guidelines
+</h4>
+<p class="text-xs md:text-sm text-sage-700 leading-relaxed mb-4">
+We would love to see you in our wedding colors!
+</p>
+<img src="assets/dress-code.png" alt="Sample attire: principal sponsors in beige, champagne and nude formal suits and gowns; wedding guests in sage, mint, peach and beige outfits" class="w-full max-w-xl mx-auto rounded-xl mb-4 bg-white" loading="lazy" />
+<div class="grid sm:grid-cols-2 gap-4 text-xs text-sage-800">
+<div class="bg-sage-50/80 p-3 rounded-xl border border-sage-100">
+<span class="font-bold block text-sage-900 mb-1">Principal Sponsors & Parents:</span>
+Cream, Beige, Tan, Nude
+</div>
+<div class="bg-sage-50/80 p-3 rounded-xl border border-sage-100">
+<span class="font-bold block text-sage-900 mb-1">Wedding Guests:</span>
+Beige, Light Sage, Dusty Green, Sage, Jade
+</div>
+</div>
+<p class="text-[11px] text-red-600/90 mt-4 font-medium text-center bg-red-50 py-2 rounded-lg">
+⚠️ Please avoid: Colors outside our palette, denim/jeans, shorts & t-shirts, slippers & rubber shoes.
+</p>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- ================= GIFT NOTE & QR CODES ================= -->
+<section class="py-20 px-4 bg-cream relative">
+<div class="max-w-2xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+<span class="text-xs uppercase tracking-[0.3em] text-sage-600 font-semibold block mb-2">With Love & Gratitude</span>
+<h2 class="font-serif text-4xl md:text-5xl text-sage-900 mb-6">Gift Note</h2>
+<div class="w-16 h-[1px] bg-sage-400 mx-auto mb-8"></div>
+
+<div class="glass-card rounded-3xl p-8 md:p-10 shadow-xl mb-10">
+<p class="font-serif text-lg md:text-xl text-sage-800 leading-relaxed italic mb-6">
+"Your presence on our special day is already the greatest gift we could ask for. If you wish to give us an additional blessing, a monetary gift would be sincerely appreciated as we build our future and create a home filled with love. Thank you for being part of our journey."
+</p>
+
+<div class="w-12 h-[1px] bg-sage-300 mx-auto my-6"></div>
+<h4 class="font-serif text-xl font-bold text-sage-900 mb-6">Scan to Send a Gift</h4>
+
+<!-- QR Codes Grid -->
+<div class="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto">
+<!-- UnionBank QR -->
+<div class="bg-white p-5 rounded-2xl shadow-md border border-sage-100 flex flex-col items-center">
+<a href="assets/unionbank-qr.png" target="_blank" rel="noopener" class="block w-full aspect-square rounded-xl mb-3 overflow-hidden border border-sage-200">
+<img src="assets/unionbank-qr.png" alt="UnionBank InstaPay QR code for sending a gift" class="w-full h-full object-contain" loading="lazy" />
+</a>
+<span class="font-serif font-bold text-sage-900 text-sm">UnionBank</span>
+<span class="text-[11px] text-sage-600 mt-0.5">Eman Bernales / Jen Morsen</span>
+</div>
+
+<!-- GCash QR -->
+<div class="bg-white p-5 rounded-2xl shadow-md border border-sage-100 flex flex-col items-center">
+<a href="assets/gcash-qr.png" target="_blank" rel="noopener" class="block w-full aspect-square rounded-xl mb-3 overflow-hidden border border-blue-100">
+<img src="assets/gcash-qr.png" alt="GCash InstaPay QR code for sending a gift" class="w-full h-full object-contain" loading="lazy" />
+</a>
+<span class="font-serif font-bold text-sage-900 text-sm">GCash</span>
+<span class="text-[11px] text-sage-600 mt-0.5">0917-XXX-XXXX</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- ================= MEMORIES / GALLERY ================= -->
+<section class="py-20 px-4 bg-sage-50 relative">
+<div class="max-w-3xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+<span class="text-xs uppercase tracking-[0.3em] text-sage-600 font-semibold block mb-2">Our Story in Pictures</span>
+<h2 class="font-serif text-4xl md:text-5xl text-sage-900 mb-6">Memories</h2>
+<div class="w-16 h-[1px] bg-sage-300 mx-auto mb-8"></div>
+
+<div class="glass-card rounded-3xl p-6 shadow-xl relative overflow-hidden">
+<div class="relative h-72 md:h-96 rounded-2xl overflow-hidden shadow-inner">
+<img id="gallery-img" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80" alt="Couple Memory" class="w-full h-full object-cover transition-all duration-700">
+</div>
+<!-- Carousel Dots -->
+<div class="flex justify-center gap-2 mt-4" id="carousel-dots">
+<button onclick="setSlide(0)" class="w-3 h-3 rounded-full bg-sage-800 transition-all"></button>
+<button onclick="setSlide(1)" class="w-3 h-3 rounded-full bg-sage-300 hover:bg-sage-500 transition-all"></button>
+<button onclick="setSlide(2)" class="w-3 h-3 rounded-full bg-sage-300 hover:bg-sage-500 transition-all"></button>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- ================= ENTOURAGE ================= -->
+<section class="py-20 px-4 bg-cream relative">
+<div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+<div class="text-center mb-12">
+<span class="text-xs uppercase tracking-[0.3em] text-sage-600 font-semibold block mb-2">The Wedding Party</span>
+<h2 class="font-serif text-4xl md:text-5xl text-sage-900">Entourage</h2>
+<div class="w-16 h-[1px] bg-sage-400 mx-auto mt-4"></div>
+</div>
+
+<div class="space-y-8">
+<!-- Parents -->
+<div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg text-center" data-aos="fade-up">
+<h3 class="font-serif text-2xl text-sage-900 font-semibold mb-6 uppercase tracking-wider text-sm">Parents of the Couple</h3>
+<div class="grid md:grid-cols-2 gap-6 text-sm">
+<div class="bg-white/60 p-4 rounded-2xl border border-sage-100">
+<p class="font-serif font-bold text-sage-900 text-base mb-2">Groom's Parents</p>
+<p class="text-sage-800 mb-1">MR. RUFINO BERNALES ✝</p>
+<p class="text-sage-800">MRS. LYDIA BERNALES ✝</p>
+</div>
+<div class="bg-white/60 p-4 rounded-2xl border border-sage-100">
+<p class="font-serif font-bold text-sage-900 text-base mb-2">Bride's Parents</p>
+<p class="text-sage-800 mb-1">MR. MANUEL MORSEN ✝</p>
+<p class="text-sage-800">MRS. GENA MORSEN</p>
+</div>
+</div>
+</div>
+
+<!-- Walk Us Down The Aisle -->
+<div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg text-center" data-aos="fade-up">
+<h3 class="font-serif text-2xl text-sage-900 font-semibold mb-6 uppercase tracking-wider text-sm">To Walk Us Down The Aisle</h3>
+<div class="grid md:grid-cols-2 gap-6 text-sm">
+<div class="bg-white/60 p-4 rounded-2xl border border-sage-100">
+<p class="font-serif font-bold text-sage-900 text-base mb-2">Groom's Side</p>
+<p class="text-sage-800">MR. BAILEY BERNALES & MRS. BERNADETTE BERNALES</p>
+</div>
+<div class="bg-white/60 p-4 rounded-2xl border border-sage-100">
+<p class="font-serif font-bold text-sage-900 text-base mb-2">Bride's Side</p>
+<p class="text-sage-800">MR. GIAN MANUEL MORSEN & MRS. GENA MORSEN</p>
+</div>
+</div>
+</div>
+
+<!-- Principal Sponsors -->
+<div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg text-center" data-aos="fade-up">
+<h3 class="font-serif text-2xl text-sage-900 font-semibold mb-6 uppercase tracking-wider text-sm">Principal Sponsors</h3>
+<div class="grid sm:grid-cols-2 gap-3 text-xs md:text-sm text-sage-800">
+<div class="bg-white/60 p-3 rounded-xl leading-relaxed">MR. ROEL BERNALES<br>MRS. CHEEKIE MARIE BERNALES</div>
+<div class="bg-white/60 p-3 rounded-xl leading-relaxed">MR. OLIVER BERNALES<br>MRS. SHALOM REA BERNALES</div>
+<div class="bg-white/60 p-3 rounded-xl leading-relaxed">MR. JEFFREY GONZALES<br>MRS. RAPUNZEL GONZALES</div>
+<div class="bg-white/60 p-3 rounded-xl leading-relaxed">MR. MARCO MISTERIO<br>MRS. CRESILDA MISTERIO</div>
+<div class="bg-white/60 p-3 rounded-xl leading-relaxed">MR. NOEL TITO<br>MRS. ALMARA TITO</div>
+<div class="bg-white/60 p-3 rounded-xl leading-relaxed">MR. BERNARDO BRIONES<br>MRS. MARIVIC BRIONES</div>
+<div class="bg-white/60 p-3 rounded-xl leading-relaxed">MR. MARTIN CARITAN JR.<br>MRS. JOSEPHINE CARITAN</div>
+<div class="bg-white/60 p-3 rounded-xl leading-relaxed">MR. MICHAEL VARQUEZ<br>MRS. JOSIFINA VARQUEZ</div>
+</div>
+</div>
+
+<!-- Best Man & Matron of Honor -->
+<div class="grid md:grid-cols-2 gap-6" data-aos="fade-up">
+<div class="glass-card rounded-3xl p-6 shadow-lg text-center">
+<h4 class="font-serif text-lg font-bold text-sage-900 mb-2">Best Man</h4>
+<p class="text-sage-800 text-sm font-medium">MR. JOSE MARIE DIRAIN</p>
+</div>
+<div class="glass-card rounded-3xl p-6 shadow-lg text-center">
+<h4 class="font-serif text-lg font-bold text-sage-900 mb-2">Matron of Honor</h4>
+<p class="text-sage-800 text-sm font-medium">MRS. JIANNE CAÑETE</p>
+</div>
+</div>
+
+<!-- Groomsmen & Bridesmaids -->
+<div class="grid md:grid-cols-2 gap-6" data-aos="fade-up">
+<div class="glass-card rounded-3xl p-6 shadow-lg text-center">
+<h4 class="font-serif text-xl font-bold text-sage-900 mb-4">Groomsmen</h4>
+<div class="space-y-2 text-xs md:text-sm text-sage-800">
+<p>JOHN MICHAEL FLORES</p>
+<p>JAMES MHAR GENISTON</p>
+<p>ALVIN NAVARRO</p>
+<p>AIDAN REUL BERNALES</p>
+<p>CHADLEY REYES</p>
+<p>WENDELL EMPLEO</p>
+</div>
+</div>
+<div class="glass-card rounded-3xl p-6 shadow-lg text-center">
+<h4 class="font-serif text-xl font-bold text-sage-900 mb-4">Bridesmaids</h4>
+<div class="space-y-2 text-xs md:text-sm text-sage-800">
+<p>JOANNE PAGADUAN</p>
+<p>GEVAH BATAD</p>
+<p>ARELLA MAE BERNALES</p>
+<p>CHYLOH MARIE BERNALES</p>
+<p>KIMBERLY LUAGE</p>
+<p>MARIEL BRIONES</p>
+</div>
+</div>
+</div>
+
+<!-- Secondary Sponsors & Bearers -->
+<div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg text-center" data-aos="fade-up">
+<h3 class="font-serif text-2xl text-sage-900 font-semibold mb-6 uppercase tracking-wider text-sm">Secondary Sponsors & Bearers</h3>
+<div class="grid sm:grid-cols-3 gap-4 text-xs md:text-sm text-sage-800 mb-6">
+<div class="bg-white/60 p-4 rounded-xl">
+<span class="font-bold block text-sage-900 mb-1">Candle</span>
+MR. SHEM DOBLE &<br>MRS. KEESHA DOBLE
+</div>
+<div class="bg-white/60 p-4 rounded-xl">
+<span class="font-bold block text-sage-900 mb-1">Veil</span>
+MR. FERDIE BERNALES &<br>MRS. CINDY BERNALES
+</div>
+<div class="bg-white/60 p-4 rounded-xl">
+<span class="font-bold block text-sage-900 mb-1">Cord</span>
+MR. CHRISTIAN JEFE &<br>MRS. JEUNESSA MARIE JEFE
+</div>
+</div>
+<div class="grid sm:grid-cols-3 gap-4 text-xs md:text-sm text-sage-800">
+<div class="bg-white/60 p-3 rounded-xl">
+<span class="font-bold block text-sage-900">Ring Bearer</span>
+JOAQUIN BERNALES
+</div>
+<div class="bg-white/60 p-3 rounded-xl">
+<span class="font-bold block text-sage-900">Bible Bearer</span>
+ISAIAH BERNALES
+</div>
+<div class="bg-white/60 p-3 rounded-xl">
+<span class="font-bold block text-sage-900">Coin Bearer</span>
+JOHN DAVE BERNALES
+</div>
+</div>
+</div>
+
+<!-- Flower Girls -->
+<div class="glass-card rounded-3xl p-6 shadow-lg text-center" data-aos="fade-up">
+<h4 class="font-serif text-xl font-bold text-sage-900 mb-4">Flower Girls</h4>
+<div class="grid sm:grid-cols-3 gap-2 text-xs md:text-sm text-sage-800">
+<p class="bg-white/50 p-2 rounded-lg">AXELLE MARIE BERNALES</p>
+<p class="bg-white/50 p-2 rounded-lg">EIRENE MARIE BERNALES</p>
+<p class="bg-white/50 p-2 rounded-lg">CAMILA YSABELLE JEFE</p>
+<p class="bg-white/50 p-2 rounded-lg">NIÑA JANE BERNALES</p>
+<p class="bg-white/50 p-2 rounded-lg sm:col-start-3">CARMELITE BERNALES</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- ================= FAQ ================= -->
+<section class="py-20 px-4 bg-sage-50 relative">
+<div class="max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+<div class="text-center mb-12">
+<span class="text-xs uppercase tracking-[0.3em] text-sage-600 font-semibold block mb-2">Got Questions?</span>
+<h2 class="font-serif text-4xl md:text-5xl text-sage-900">Everything You Need to Know</h2>
+<div class="w-16 h-[1px] bg-sage-300 mx-auto mt-4"></div>
+</div>
+
+<div class="space-y-4">
+<details class="faq-item glass-card rounded-2xl shadow-sm group">
+<summary class="flex items-center justify-between gap-4 cursor-pointer p-6 font-serif text-lg font-bold text-sage-900">
+<span>What time should I arrive?</span>
+<i data-lucide="chevron-down" class="faq-chevron w-5 h-5 shrink-0 text-sage-600 transition-transform duration-300"></i>
+</summary>
+<p class="px-6 pb-6 -mt-2 text-xs md:text-sm text-sage-700 leading-relaxed">We kindly ask our guests to arrive at least 30 minutes before the ceremony. The Holy Mass will begin promptly at 3:30 PM, with the entourage entrance taking place beforehand.</p>
+</details>
+<details class="faq-item glass-card rounded-2xl shadow-sm group">
+<summary class="flex items-center justify-between gap-4 cursor-pointer p-6 font-serif text-lg font-bold text-sage-900">
+<span>Can I bring a plus-one?</span>
+<i data-lucide="chevron-down" class="faq-chevron w-5 h-5 shrink-0 text-sage-600 transition-transform duration-300"></i>
+</summary>
+<p class="px-6 pb-6 -mt-2 text-xs md:text-sm text-sage-700 leading-relaxed">As we are celebrating an intimate wedding, we can only accommodate guests whose names are included on the invitation. Thank you for understanding.</p>
+</details>
+<details class="faq-item glass-card rounded-2xl shadow-sm group">
+<summary class="flex items-center justify-between gap-4 cursor-pointer p-6 font-serif text-lg font-bold text-sage-900">
+<span>Can we take photos and videos during the ceremony?</span>
+<i data-lucide="chevron-down" class="faq-chevron w-5 h-5 shrink-0 text-sage-600 transition-transform duration-300"></i>
+</summary>
+<p class="px-6 pb-6 -mt-2 text-xs md:text-sm text-sage-700 leading-relaxed">Absolutely! We’d love for you to capture these special moments. However, we kindly ask everyone to remain seated and keep the aisles clear so our official photographers and videographers can capture every moment beautifully.</p>
+</details>
+<details class="faq-item glass-card rounded-2xl shadow-sm group">
+<summary class="flex items-center justify-between gap-4 cursor-pointer p-6 font-serif text-lg font-bold text-sage-900">
+<span>What is the dress code?</span>
+<i data-lucide="chevron-down" class="faq-chevron w-5 h-5 shrink-0 text-sage-600 transition-transform duration-300"></i>
+</summary>
+<p class="px-6 pb-6 -mt-2 text-xs md:text-sm text-sage-700 leading-relaxed">We would love to see you in formal attire! Our wedding motif is Sage and Champagne. For more details, please refer to the Dress Code section of this invitation. Thank you for celebrating with us in style!</p>
+</details>
+<details class="faq-item glass-card rounded-2xl shadow-sm group">
+<summary class="flex items-center justify-between gap-4 cursor-pointer p-6 font-serif text-lg font-bold text-sage-900">
+<span>Is parking available at the venue?</span>
+<i data-lucide="chevron-down" class="faq-chevron w-5 h-5 shrink-0 text-sage-600 transition-transform duration-300"></i>
+</summary>
+<p class="px-6 pb-6 -mt-2 text-xs md:text-sm text-sage-700 leading-relaxed">Yes, parking is available at the venue for guests driving their own vehicles. We recommend arriving early to allow enough time for parking and seating.</p>
+</details>
+<details class="faq-item glass-card rounded-2xl shadow-sm group">
+<summary class="flex items-center justify-between gap-4 cursor-pointer p-6 font-serif text-lg font-bold text-sage-900">
+<span>What gifts would the couple appreciate?</span>
+<i data-lucide="chevron-down" class="faq-chevron w-5 h-5 shrink-0 text-sage-600 transition-transform duration-300"></i>
+</summary>
+<p class="px-6 pb-6 -mt-2 text-xs md:text-sm text-sage-700 leading-relaxed">Your presence is the greatest gift we could ask for. Should you wish to give us an additional blessing, a monetary gift would be warmly appreciated as we begin our journey together.</p>
+</details>
+<details class="faq-item glass-card rounded-2xl shadow-sm group">
+<summary class="flex items-center justify-between gap-4 cursor-pointer p-6 font-serif text-lg font-bold text-sage-900">
+<span>When is the RSVP deadline?</span>
+<i data-lucide="chevron-down" class="faq-chevron w-5 h-5 shrink-0 text-sage-600 transition-transform duration-300"></i>
+</summary>
+<p class="px-6 pb-6 -mt-2 text-xs md:text-sm text-sage-700 leading-relaxed">Kindly confirm your attendance on or before November 20, 2026. Unconfirmed seats after the deadline may be released. For inquiries or RSVP assistance, please contact Eman or Jen.</p>
+</details>
+</div>
+</div>
+</section>
+
+
+<!-- ================= RSVP ================= -->
+<section id="rsvp" class="py-20 px-4 bg-cream relative"><div class="max-w-xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+<span class="text-xs uppercase tracking-[0.3em] text-sage-600 font-semibold block mb-2">Kindly Reply By November 20, 2026</span><h2 class="font-serif text-4xl md:text-5xl text-sage-900 mb-6">RSVP</h2><div class="w-16 h-[1px] bg-sage-400 mx-auto mb-8"></div>
+<div class="glass-card rounded-3xl p-6 md:p-8 shadow-xl text-left"><p class="font-serif text-xl text-sage-900 text-center mb-2">Will you celebrate with us?</p><p class="text-sm text-sage-700 text-center mb-6">Please reply by November 20, 2026. Your response will be sent to the couple.</p>
+<form name="wedding-rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" class="space-y-4"><input type="hidden" name="form-name" value="wedding-rsvp"><p class="hidden"><label>Leave this field empty: <input name="bot-field"></label></p>
+<div><label for="guest-name" class="block text-xs uppercase tracking-wider text-sage-700 mb-1">Full name *</label><input id="guest-name" name="guest-name" type="text" autocomplete="name" required class="w-full rounded-xl border border-sage-200 bg-white px-4 py-3 text-sm text-sage-900"></div>
+<div><label for="guest-contact" class="block text-xs uppercase tracking-wider text-sage-700 mb-1">Email or contact number</label><input id="guest-contact" name="guest-contact" type="text" class="w-full rounded-xl border border-sage-200 bg-white px-4 py-3 text-sm text-sage-900"></div>
+<div><label for="attendance" class="block text-xs uppercase tracking-wider text-sage-700 mb-1">Will you attend? *</label><select id="attendance" name="attendance" required class="w-full rounded-xl border border-sage-200 bg-white px-4 py-3 text-sm text-sage-900"><option value="">Please select</option><option value="Joyfully accepts">Joyfully accepts</option><option value="Regretfully declines">Regretfully declines</option></select></div>
+<div><label for="guest-count" class="block text-xs uppercase tracking-wider text-sage-700 mb-1">Number of people attending (including you) *</label><select id="guest-count" name="guest-count" required class="w-full rounded-xl border border-sage-200 bg-white px-4 py-3 text-sm text-sage-900"><option value="0">0 — I cannot attend</option><option value="1" selected>1 person</option><option value="2">2 people</option><option value="3">3 people</option><option value="4">4 people</option><option value="5">5 people</option></select><p class="text-xs text-sage-600 mt-1">Please stay within the number of seats specified in your invitation.</p></div>
+<div><label for="companions" class="block text-xs uppercase tracking-wider text-sage-700 mb-1">Names of companions (if applicable)</label><textarea id="companions" name="companion-names" rows="2" class="w-full rounded-xl border border-sage-200 bg-white px-4 py-3 text-sm text-sage-900"></textarea></div>
+<div><label for="message" class="block text-xs uppercase tracking-wider text-sage-700 mb-1">A message for the couple (optional)</label><textarea id="message" name="message" rows="3" class="w-full rounded-xl border border-sage-200 bg-white px-4 py-3 text-sm text-sage-900"></textarea></div>
+<button type="submit" class="w-full bg-sage-900 hover:bg-sage-800 text-white font-medium text-xs uppercase tracking-wider py-4 px-8 rounded-full shadow-lg transition-all">Send RSVP</button><p class="text-[11px] text-sage-600 text-center">Your reply is collected for wedding planning only.</p></form></div></div></section>
+
+
+<!-- ================= GUEST PHOTOS ================= -->
+<section class="py-20 px-4 bg-sage-50 relative">
+<div class="max-w-xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+<span class="text-xs uppercase tracking-[0.3em] text-sage-600 font-semibold block mb-2">Share Your Snapshots</span>
+<h2 class="font-serif text-4xl md:text-5xl text-sage-900 mb-4">Capture & Share</h2>
+<p class="text-xs md:text-sm text-sage-700 mb-8">Snap away on the day, then scan this code with your phone camera to add your photos to our album.</p>
+
+<div class="glass-card rounded-3xl p-8 shadow-xl inline-block mx-auto">
+<div class="w-64 h-64 bg-white rounded-2xl shadow-inner border border-sage-200 mx-auto mb-4 overflow-hidden flex items-center justify-center">
+<!-- QR Code for Photo Sharing -->
+<img src="assets/capture-the-love-qr.png" alt="Capture the Love photo-sharing QR code" class="w-full h-full object-contain" />
+</div>
+<a href="#photo-share" onclick="alert('Redirecting to live photo upload gallery...')" class="text-xs text-sage-800 font-semibold underline hover:text-sage-600 tracking-wider uppercase">
+Or open the photo sharing page
+</a>
+</div>
+</div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="py-16 px-4 bg-sage-950 text-sage-200 text-center relative">
+<div class="max-w-md mx-auto" data-aos="fade-up">
+<h2 class="font-script text-5xl text-champagne-300 mb-3">Eman & Jen</h2>
+<p class="text-xs uppercase tracking-[0.2em] text-sage-400 mb-8">12.21.2026</p>
+<p class="font-serif text-lg italic text-sage-300 mb-8">"We can't wait to celebrate with you"</p>
+
+<div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+<a href="#rsvp" class="bg-champagne-300 hover:bg-champagne-400 text-sage-950 font-semibold text-xs uppercase tracking-wider py-3 px-8 rounded-full transition-all shadow-md">
+RSVP Now
+</a>
+<a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="bg-transparent hover:bg-white/10 text-sage-200 border border-sage-700 font-semibold text-xs uppercase tracking-wider py-3 px-8 rounded-full transition-all">
+Back to the Beginning
+</a>
+</div>
+
+<p class="text-[10px] text-sage-500 uppercase tracking-widest pt-6 border-t border-sage-900">
+Made with Love • Eman & Jen Wedding 2026
+</p>
+</div>
+</footer>
+
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+// Initialize AOS animations
+AOS.init({
+once: true,
+duration: 1000,
+offset: 100
+});
+
+// Initialize Lucide icons
+lucide.createIcons();
+
+// Countdown Timer Logic
+const weddingDate = new Date("December 21, 2026 15:00:00").getTime();
+function updateCountdown() {
+const now = new Date().getTime();
+const distance = weddingDate - now;
+
+if (distance < 0) {
+document.getElementById("days").innerText = "00";
+document.getElementById("hours").innerText = "00";
+document.getElementById("minutes").innerText = "00";
+document.getElementById("seconds").innerText = "00";
+return;
+}
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("days").innerText = String(days).padStart(2, '0');
+document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// Memories Carousel Logic
+const images = [
+"https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80",
+"https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
+"https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80"
+];
+let currentSlide = 0;
+const galleryImg = document.getElementById("gallery-img");
+const dots = document.querySelectorAll("#carousel-dots button");
+
+function setSlide(index) {
+currentSlide = index;
+galleryImg.style.opacity = 0;
+setTimeout(() => {
+galleryImg.src = images[currentSlide];
+galleryImg.style.opacity = 1;
+}, 300);
+
+dots.forEach((dot, idx) => {
+if (idx === currentSlide) {
+dot.classList.remove("bg-sage-300");
+dot.classList.add("bg-sage-800");
+} else {
+dot.classList.remove("bg-sage-800");
+dot.classList.add("bg-sage-300");
+}
+});
+}
+
+setInterval(() => {
+currentSlide = (currentSlide + 1) % images.length;
+setSlide(currentSlide);
+}, 4000);
+
+// Background Music (loops) & Toggle Logic
+const bgMusic = document.getElementById("bg-music");
+const musicToggle = document.getElementById("music-toggle");
+const welcomeOverlay = document.getElementById("welcome-overlay");
+let isPlaying = false;
+bgMusic.volume = 0.4;
+
+function playMusic() {
+return bgMusic.play().then(() => {
+isPlaying = true;
+musicToggle.classList.add("ring-4", "ring-champagne-300/50");
+}).catch(e => {
+console.log("Audio playback prevented:", e);
+});
+}
+
+function pauseMusic() {
+bgMusic.pause();
+isPlaying = false;
+musicToggle.classList.remove("ring-4", "ring-champagne-300/50");
+}
+
+function toggleMusic() {
+if (isPlaying) {
+pauseMusic();
+} else {
+playMusic();
+}
+}
+
+// Opening the invitation is the user gesture that lets browsers start audio
+document.body.style.overflow = "hidden";
+document.getElementById("open-invitation").addEventListener("click", () => {
+playMusic();
+welcomeOverlay.classList.add("opacity-0", "pointer-events-none");
+document.body.style.overflow = "";
+setTimeout(() => welcomeOverlay.remove(), 700);
+});
+
+// Safety net: keep looping even if the browser ignores the loop attribute
+bgMusic.addEventListener("ended", () => {
+bgMusic.currentTime = 0;
+if (isPlaying) bgMusic.play();
+});
+</script>
+</body>
+</html>
